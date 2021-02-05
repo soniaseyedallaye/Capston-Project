@@ -1,0 +1,16 @@
+import datetime
+import dateutil
+{
+ "observation_id": <string>,
+ "Type": <string>,
+ "Date": <string>,
+ "Part of a policing operation": <boolean>,
+ "Latitude": <float>,
+ "Longitude": <float>,
+ "Gender": <string>,
+ "Age range": <string>,
+ "Officer-defined ethnicity": <string>,
+ "Legislation": <string>,
+ "Object of search": <string>,
+ "station": <string>
+}

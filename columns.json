@@ -1,1 +1,1 @@
-["Pclass", "Sex", "Age", "SibSp", "Parch", "Fare", "Cabin", "Embarked"]
+["Type", "Date", "Part of a policing operation", "Latitude", "Longitude", "Gender", "Age range", "Officer-defined ethnicity", "Legislation", "Object of search", "station", "hour", "month", "day"]
