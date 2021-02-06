@@ -273,7 +273,7 @@ def check_date(observation):
 app = Flask(__name__)
 
 
-@app.route('/should_search', methods=['POST'])
+@app.route('/should_search/', methods=['POST'])
 def should_search():
     obs_dict = request.get_json()
     # verification routines
