@@ -21,7 +21,7 @@ class Prediction(Model):
     observation = TextField()
     #proba = FloatField()
     prediction = TextField()
-    true_outcome = IntegerField(null=True)
+    outcome = IntegerField(null=True)
 
     class Meta:
         database = DB
@@ -352,12 +352,12 @@ def search_result():
 
     try:
         p = Prediction.get(Prediction.observation_id == obs_dict['observation_id'])
-        p.true_outcome = obs_dict['true_outcome']
+        p.outcome = obs_dict['outcome']
         #p.outcome = Prediction.prediction
         #response = obs_dict
         p.save()
         #obs_dict['outcome'] =p
-        obs_dict['outcome'] = p.prediction
+        obs_dict['predicted_outcome'] = p.prediction
         return jsonify(obs_dict)
     except Prediction.DoesNotExist:
         error_msg = 'Observation ID: "{}" does not exist'.format(obs_dict['observation_id'])
