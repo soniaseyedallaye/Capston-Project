@@ -346,7 +346,7 @@ def should_search():
 
 
 
-@app.route('/search_result', methods=['POST'])
+@app.route('/search_result/', methods=['POST'])
 def search_result():
     obs_dict = request.get_json()
 
