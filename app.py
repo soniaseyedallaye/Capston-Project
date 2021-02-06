@@ -10,10 +10,13 @@ from peewee import (
     FloatField, TextField, IntegrityError
 )
 import re
-from playhouse.shortcuts import model_to_dict
+import os
+from playhouse.db_url import connect
+#from playhouse.shortcuts import model_to_dict
 ########################################
 # Begin database stuff
-DB = SqliteDatabase('predictions.db')
+#DB = SqliteDatabase('predictions.db')
+DB = connect(os.environ.get('DATABASE_URL') or 'sqlite:///predictions.db')
 
 
 class Prediction(Model):
