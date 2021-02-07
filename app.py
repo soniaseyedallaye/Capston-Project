@@ -7,8 +7,7 @@ import pandas as pd
 from flask import Flask, jsonify, request
 from peewee import (
     SqliteDatabase, Model, IntegerField,
-    FloatField, TextField, IntegrityError
-)
+    FloatField, TextField, IntegrityError)
 import re
 import os
 from playhouse.db_url import connect
@@ -253,9 +252,9 @@ def check_longitude(observation):
         return False, error
 
     return True, ""
-def getDateTimeFromISO8601String(s):
-    d = dateutil.parser.isoparse(s)
-    return d
+#def getDateTimeFromISO8601String(s):
+ #   d = dateutil.parser.isoparse(s)
+  #  return d
 regex = r'^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]+)?(Z|[+-](?:2[0-3]|[01][0-9]):[0-5][0-9])?$'
 match_iso8601 = re.compile(regex).match
 def check_date(observation):
@@ -315,7 +314,7 @@ def should_search():
     obs_dict.pop('observation_id')
     _iso = obs_dict['Date']
     obs_dict.pop('Date')
-    date_iso = getDateTimeFromISO8601String(_iso)
+    date_iso = dateutil.parser.isoparse(_iso)
     hour = date_iso.hour
     day = date_iso.day
     month = date_iso.month
